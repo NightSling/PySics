@@ -3,10 +3,10 @@ import git
 # Look at the current repo
 repo = git.Repo(search_parent_directories=True)
 
-# Get the last commit on the repo
+# Get the last commit 
 last_commit = repo.head.commit
 
-# Get the commit message from the last commit
+# Get the commit message from last_commit
 commit_message = last_commit.message
 
 # Split the commit message with character '-' and get the first part as a id
@@ -26,10 +26,10 @@ new_commit_message_formatted = '{}-{}'.format(new_commit_id_formatted, new_commi
 repo.git.add(A=True)
 
 # Git Commit with new commit message
-repo.git.commit(m=new_commit_message)
+repo.git.commit(m=new_commit_message_formatted)
 
 # Print out the new commit id
-print('New commit id: {}'.format(new_commit_id))
+print('New commit id: {}'.format(new_commit_id_formatted))
 
 # Print out the new commit hash
 print('New commit hash: {}'.format(repo.head.commit.hexsha))
