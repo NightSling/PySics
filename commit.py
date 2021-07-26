@@ -20,7 +20,7 @@ new_commit_id = commit_id + 1
 
 # Format the new commit id and new commit message, new commit id must add "000" at its front
 new_commit_id_formatted = '{:03d}'.format(new_commit_id)
-new_commit_message_formatted = '{}-{}'.format(new_commit_id_formatted, new_commit_message)
+new_commit_message_formatted = '{} - {}'.format(new_commit_id_formatted, new_commit_message)
 
 # Git add every changes
 repo.git.add(A=True)
